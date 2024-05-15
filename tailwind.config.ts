@@ -27,8 +27,9 @@ const config = {
         // background: "hsl(var(--background))",
         background: "#14161E",
         // foreground: "hsl(var(--foreground))",
-        foreground: "#22242D",
-        sidebarButtonbackground:"#0038FF",
+        foreground: "#262830",
+        cta:"#0038FF",
+        cta2:"#C600D6",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

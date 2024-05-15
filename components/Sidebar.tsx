@@ -9,7 +9,7 @@ import { useState } from "react";
 export function Sidebar() {
   const [isPressed, setIsPressed] = useState(false)
   return (
-    <div className="w-2/12 bg-foreground">
+    <div className="w-2/12 bg-foreground min-h-screen">
       <Image
         src={logoWhite}
         alt="Logo White"
@@ -21,22 +21,22 @@ export function Sidebar() {
       />
       <hr className="py-4"/>
       <div className="px-8 space-y-4">
-        <Button color="primary" className="bg-sidebarButtonbackground text-white shadow-lg py-4 flex justify-start" startContent="II" fullWidth radius="sm">
+        <Button color="primary" className="bg-cta text-white shadow-lg py-4 flex justify-start" startContent="II" fullWidth radius="sm">
           Light
         </Button>
-        <Button className={cn(isPressed ? 'bg-sidebarButtonbackground' : "bg-foreground",'text-white shadow-lg py-4 flex justify-start')} fullWidth radius="sm" onClick={()=>(setIsPressed(true))}>
+        <Button className={cn(isPressed ? 'bg-cta' : "bg-foreground",'text-white shadow-lg py-4 flex justify-start')} fullWidth radius="sm" onClick={()=>(setIsPressed(true))}>
           Light
         </Button>
-        <Button color="primary" className="bg-sidebarButtonbackground text-white shadow-lg py-4 flex justify-start" startContent="II" fullWidth radius="sm">
+        <Button className={cn(isPressed ? 'bg-cta' : "bg-foreground",'text-white shadow-lg py-4 flex justify-start')} fullWidth radius="sm" onClick={()=>(setIsPressed(true))}>
           Light
         </Button>
-        <Button className={cn(isPressed ? 'bg-sidebarButtonbackground' : "bg-foreground",'text-white shadow-lg py-4 flex justify-start')} fullWidth radius="sm" onClick={()=>(setIsPressed(true))}>
+        <Button className={cn(isPressed ? 'bg-cta' : "bg-foreground",'text-white shadow-lg py-4 flex justify-start')} fullWidth radius="sm" onClick={()=>(setIsPressed(true))}>
           Light
         </Button>
-        <Button color="primary" className="bg-sidebarButtonbackground text-white shadow-lg py-4 flex justify-start" startContent="II" fullWidth radius="sm">
+        <Button className={cn(isPressed ? 'bg-cta' : "bg-foreground",'text-white shadow-lg py-4 flex justify-start')} fullWidth radius="sm" onClick={()=>(setIsPressed(true))}>
           Light
         </Button>
-        <Button className={cn(isPressed ? 'bg-sidebarButtonbackground' : "bg-foreground",'text-white shadow-lg py-4 flex justify-start')} fullWidth radius="sm" onClick={()=>(setIsPressed(true))}>
+        <Button className={cn(isPressed ? 'bg-cta' : "bg-foreground",'text-white shadow-lg py-4 flex justify-start')} fullWidth radius="sm" onClick={()=>(setIsPressed(true))}>
           Light
         </Button>
       </div>

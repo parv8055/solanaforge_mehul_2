@@ -20,9 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("flex min-h-screen flex-col", inter.className)}>
         <NextUIProvider>
-          <div className="flex">
+          <div className="flex justify-between">
             <Sidebar />
-            <div className="mx-auto md:w-10/12">{children}</div>
+            <div className="mx-auto md:w-9/12">{children}</div>
           </div>
         </NextUIProvider>
       </body>

@@ -1,9 +1,9 @@
 import { Button, Input } from "@nextui-org/react";
 
-export default function Home() {
+export default function page() {
   return (
     <main className="flex min-h-screen flex-1">
-    <div className="flex justify-around space-x-4 w-full">
+      <div className="flex justify-around space-x-4 w-full">
         <div className="w-4/12 p-8 text-white">
           <div className="space-y-4">
             <h3>Hey Chris</h3>
@@ -11,19 +11,11 @@ export default function Home() {
           </div>
           <hr className="my-4" />
           <div className="my-4">
-            <h1 className="my-4">Node Setup</h1>
+            <h1 className="my-4">Telegram Integration</h1>
             <div className="space-y-4">
               <Input
                 type="email"
-                label="http(s) Node Link"
-                radius="sm"
-                size="sm"
-                className="bg-foreground text-white rounded-md"
-                variant="bordered"
-              />
-              <Input
-                type="email"
-                label="Websocket Node Link"
+                label="Telegram Contact Number"
                 className="bg-foreground text-white rounded-md"
                 variant="bordered"
                 radius="sm"
@@ -36,56 +28,30 @@ export default function Home() {
                 radius="sm"
                 size="lg"
               >
-                Submit
-              </Button>
-              <Button
-                variant="light"
-                className="block m-auto underline text-white"
-                radius="sm"
-              >
-                Change Node
+                GET CODE
               </Button>
             </div>
           </div>
           <hr className="my-4" />
           <div className="my-4">
-            <h1 className="my-4">Priority Fees</h1>
             <div className="space-y-4">
               <Input
                 type="email"
-                label="Buy Fee"
-                radius="sm"
-                size="sm"
-                className="bg-foreground text-white rounded-md"
-                variant="bordered"
-              />
-              <Input
-                type="email"
-                label="Sell Fee"
+                label="Enter Verification Code"
                 className="bg-foreground text-white rounded-md"
                 variant="bordered"
                 radius="sm"
                 size="sm"
               />
-              <div className="flex justify-between space-x-4">
-                <Button
-                  variant="bordered"
-                  className="text-white"
-                  radius="sm"
-                  size="lg"
-                  fullWidth
-                >
-                  AI
-                </Button>
-                <Button
-                  className="text-white bg-cta2"
-                  radius="sm"
-                  size="lg"
-                  fullWidth
-                >
-                  Submit
-                </Button>
-              </div>
+              <Button
+                variant="bordered"
+                className="block m-auto text-white"
+                fullWidth
+                radius="sm"
+                size="lg"
+              >
+                VERIFY
+              </Button>
             </div>
           </div>
         </div>
