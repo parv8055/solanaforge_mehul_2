@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import {NextUIProvider} from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
 import { Sidebar } from "@/components/Sidebar";
+import SplashScreen from "@/components/SplashScreen";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("flex min-h-screen flex-col", inter.className)}>
+      <body className={cn("flex min-h-screen flex-1", inter.className)}>
         <NextUIProvider>
-          <div className="flex justify-between">
-            <Sidebar />
-            <div className="mx-auto md:w-9/12">{children}</div>
-          </div>
+          {false ? (
+            <SplashScreen />
+          ) : (
+            <div className="flex">
+              <Sidebar />
+              <div className="mx-auto md:w-9/12">{children}</div>
+            </div>
+          )}
         </NextUIProvider>
       </body>
     </html>
   );
 }
-

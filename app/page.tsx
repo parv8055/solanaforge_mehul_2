@@ -2,7 +2,7 @@ import { Button, Input } from "@nextui-org/react";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-1">
+    <main className="flex">
     <div className="flex justify-around space-x-4 w-full">
         <div className="w-4/12 p-8 text-white">
           <div className="space-y-4">

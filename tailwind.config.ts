@@ -20,6 +20,12 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        splashgradient:
+          "radial-gradient(53.57% 77.59% at 50% 38.38%, #1D274F 0%, #14161E 100%)",
+        sidebargradient:
+          "linear-gradient(151.82deg, #C600D6 -14.66%, #00BDFF 53.6%, #0038FF 106.16%)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -28,8 +34,8 @@ const config = {
         background: "#14161E",
         // foreground: "hsl(var(--foreground))",
         foreground: "#262830",
-        cta:"#0038FF",
-        cta2:"#C600D6",
+        cta: "#0038FF",
+        cta2: "#C600D6",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
