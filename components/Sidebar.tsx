@@ -11,7 +11,7 @@ export function Sidebar() {
   const router = useRouter()
 
   return (
-    <div className="w-2/12 bg-foreground min-h-screen">
+    <div className="w-[20%] bg-foreground min-h-screen">
       <Image
         src={logoWhite}
         alt="Logo White"
@@ -25,7 +25,7 @@ export function Sidebar() {
       <div className="px-8 space-y-4">
         <Button
           className={cn(
-            pathName === "/" ? "bg-cta" : "bg-foreground ",
+            pathName === "/" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
           fullWidth
@@ -35,7 +35,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/telegramscraping" ? "bg-cta" : "bg-foreground hover:bg-background",
+            pathName === "/telegramscraping" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
           // onClick={()=>{
@@ -49,7 +49,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/tokensniper" ? "bg-cta" : "bg-foreground hover:bg-background",
+            pathName === "/tokensniper" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
           fullWidth
@@ -59,7 +59,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/aigemhunter" ? "bg-cta" : "bg-foreground hover:bg-background",
+            pathName === "/aigemhunter" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
           fullWidth
@@ -69,7 +69,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/doordie" ? "bg-cta" : "bg-foreground hover:bg-background",
+            pathName === "/doordie" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
           fullWidth
@@ -79,7 +79,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/help" ? "bg-cta" : "bg-foreground hover:bg-background",
+            pathName === "/help" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
           fullWidth

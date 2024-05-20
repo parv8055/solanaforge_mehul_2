@@ -19,16 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("flex min-h-screen flex-1", inter.className)}>
+      <body className={cn("font-sans antialiased", inter.className)}>
         <NextUIProvider>
-          {false ? (
-            <SplashScreen />
-          ) : (
-            <div className="flex">
-              <Sidebar />
-              <div className="mx-auto md:w-9/12">{children}</div>
-            </div>
-          )}
+          <main className="flex">
+            {false ? (
+              <SplashScreen />
+            ) : (
+              <>
+                <Sidebar />
+                <div className="flex-1 border-2 border-white">{children}</div>
+              </>
+            )}
+          </main>
         </NextUIProvider>
       </body>
     </html>

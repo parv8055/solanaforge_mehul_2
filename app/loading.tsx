@@ -1,14 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import logo from "../public/splashlogo.png";
-import { Button, Input } from "@nextui-org/react";
-import { useState } from "react";
 
-export default function SplashScreen() {
-  const [isPressed, setIsPressed] = useState(false);
+export default function Loading() {
   return (
-    <div className="flex flex-col items-center justify-center bg-splashgradient flex-1 space-y-8">
+    <div className="flex flex-col items-center justify-center bg-splashgradient h-screen w-screen space-y-8">
+      <div></div>
       <div>
         <Image
           src={logo}
@@ -20,23 +16,7 @@ export default function SplashScreen() {
         <h1 className="text-white mt-4 text-center">Welcome to Trading Bot</h1>
       </div>
       <div className="w-4/12">
-      {isPressed ? (
-        <div className="flex space-x-4">
-          <Input type="email" placeholder="Email"  radius="sm"
-                />
-          <Button className="bg-cta text-white" radius="sm">
-            SUBMIT
-          </Button>
-        </div>
-      ) : (
-        <Button
-          className="bg-white block mx-auto"
-          radius="sm"
-          onClick={() => setIsPressed(true)}
-        >
-          START TRADING
-        </Button>
-      )}
+     
       </div>
     
 
