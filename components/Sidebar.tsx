@@ -11,7 +11,7 @@ export function Sidebar() {
   const router = useRouter()
 
   return (
-    <div className="w-[20%] bg-foreground min-h-screen">
+    <div className="hidden md:block w-[20%] bg-foreground min-h-screen">
       <Image
         src={logoWhite}
         alt="Logo White"

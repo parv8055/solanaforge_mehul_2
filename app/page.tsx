@@ -2,6 +2,8 @@ import { Button, Input, Tooltip } from "@nextui-org/react";
 import Image from "next/image";
 import nodeSetup from "../public/nodeSetup.png";
 import i from "../public/i.png";
+import wallet from "../public/wallet.png";
+
 export default function Home() {
   const name = "Chris";
   return (
@@ -110,11 +112,38 @@ export default function Home() {
       </div>
       <div className="w-6/12 px-8 text-white flex flex-col">
         <div>
-          <div className="h-16 w-full bg-foreground rounded"></div>
+          <div className="w-full bg-foreground rounded px-4 py-1">
+            <div className="flex items-center space-x-4">
+              <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
+                <Image src={wallet} alt="wallet" />
+              </div>
+              <div>
+                <h1 className="text-xs">Wallet Address</h1>
+                <h1 className="">2345acv123htd23454acxzczxcx</h1>
+              </div>
+            </div>
+          </div>
 
           <div className="flex justify-between space-x-4 my-4">
-            <div className="h-16 w-full bg-foreground rounded "></div>
-            <div className="h-16 w-full bg-foreground rounded "></div>
+            <div className="w-full bg-foreground rounded px-4 py-1">
+              <div className="flex items-center space-x-4">
+                <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
+                  <Image src={wallet} alt="wallet" />
+                </div>
+                <div>
+                  <h1 className="text-xs">Wallet Address</h1>
+                  <h1 className="">2345acv123htd23454acxzczxcx</h1>
+                </div>{" "}
+              </div>
+            </div>
+            <div className="w-full bg-foreground rounded px-4 py-1">
+              <div className="flex items-center space-x-4">
+                <div className="h-8 w-8 bg-cta flex justify-center items-center rounded">
+                  <Image src={wallet} alt="wallet" />
+                </div>
+                <h1 className="my-4">Node Setup</h1>
+              </div>
+            </div>
           </div>
         </div>
         <div className="my-4 space-y-2">
