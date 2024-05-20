@@ -28,6 +28,9 @@ export function Sidebar() {
             pathName === "/" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
+          onClick={()=>{
+            router.push('/',)
+          }}
           fullWidth
           radius="sm"
         >
@@ -38,54 +41,65 @@ export function Sidebar() {
             pathName === "/telegramscraping" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
-          // onClick={()=>{
-          //   router.push('/telegramscraping',)
-          // }}
-          onPress={()=>router.push('/telegramscraping')}
+          onClick={()=>{
+            router.push('/telegramscraping',)
+          }}
           fullWidth
           radius="sm"
         >
-          Telegram Scraping
+          TELEGRAM SCRAPING
         </Button>
         <Button
           className={cn(
             pathName === "/tokensniper" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
+          onClick={()=>{
+            router.push('/',)
+          }}
           fullWidth
           radius="sm"
         >
-          Token Sniper
+          TOKEN SNIPER
         </Button>
         <Button
           className={cn(
             pathName === "/aigemhunter" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
+          onClick={()=>{
+            router.push('/',)
+          }}
           fullWidth
           radius="sm"
         >
-          AI Gem Hunter
+          AI GEM HUNTER
         </Button>
         <Button
           className={cn(
             pathName === "/doordie" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
+          onClick={()=>{
+            router.push('/',)
+          }}
           fullWidth
           radius="sm"
         >
-          DO or Die
+          DO OR DIE
         </Button>
         <Button
           className={cn(
             pathName === "/help" ? "bg-cta" : "bg-foreground hover:bg-cta",
             "text-white py-4 flex justify-start"
           )}
+          onClick={()=>{
+            router.push('/',)
+          }}
           fullWidth
           radius="sm"
         >
-          Help
+          HELP
         </Button>
       </div>
       <div className="px-8 space-y-8 mt-8">
@@ -95,7 +109,7 @@ export function Sidebar() {
           fullWidth
           radius="sm"
         >
-          Join Our Community
+          JOIN OUR COMMUNITY
         </Button>
         <Button
           className="bg-background text-white"
@@ -103,7 +117,7 @@ export function Sidebar() {
           fullWidth
           radius="sm"
         >
-          user
+          USERs
         </Button>
       </div>
     </div>
