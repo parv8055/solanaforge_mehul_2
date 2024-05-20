@@ -23,9 +23,9 @@ export default function SplashScreen() {
       <div className="w-4/12">
       {isPressed ? (
         <div className="flex space-x-4">
-          <Input type="email" label="Email"  radius="sm"
-                size="sm" />
-          <Button className="bg-cta text-white" radius="sm" size="lg">
+          <Input type="email" placeholder="Email"  radius="sm"
+                />
+          <Button className="bg-cta text-white" radius="sm">
             SUBMIT
           </Button>
         </div>

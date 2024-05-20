@@ -4,10 +4,12 @@ import Image from "next/image";
 import logoWhite from "../public/logoWhite.png";
 import { Button } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export function Sidebar() {
   const pathName = usePathname();
+  const router = useRouter()
+
   return (
     <div className="w-2/12 bg-foreground min-h-screen">
       <Image
@@ -23,8 +25,8 @@ export function Sidebar() {
       <div className="px-8 space-y-4">
         <Button
           className={cn(
-            pathName === "/" ? "bg-cta" : "bg-foreground",
-            "text-white shadow-lg py-4 flex justify-start"
+            pathName === "/" ? "bg-cta" : "bg-foreground ",
+            "text-white py-4 flex justify-start"
           )}
           fullWidth
           radius="sm"
@@ -33,9 +35,13 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/telegramscraping" ? "bg-cta" : "bg-foreground",
-            "text-white shadow-lg py-4 flex justify-start"
+            pathName === "/telegramscraping" ? "bg-cta" : "bg-foreground hover:bg-background",
+            "text-white py-4 flex justify-start"
           )}
+          // onClick={()=>{
+          //   router.push('/telegramscraping',)
+          // }}
+          onPress={()=>router.push('/telegramscraping')}
           fullWidth
           radius="sm"
         >
@@ -43,8 +49,8 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/tokensniper" ? "bg-cta" : "bg-foreground",
-            "text-white shadow-lg py-4 flex justify-start"
+            pathName === "/tokensniper" ? "bg-cta" : "bg-foreground hover:bg-background",
+            "text-white py-4 flex justify-start"
           )}
           fullWidth
           radius="sm"
@@ -53,8 +59,8 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/aigemhunter" ? "bg-cta" : "bg-foreground",
-            "text-white shadow-lg py-4 flex justify-start"
+            pathName === "/aigemhunter" ? "bg-cta" : "bg-foreground hover:bg-background",
+            "text-white py-4 flex justify-start"
           )}
           fullWidth
           radius="sm"
@@ -63,8 +69,8 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/doordie" ? "bg-cta" : "bg-foreground",
-            "text-white shadow-lg py-4 flex justify-start"
+            pathName === "/doordie" ? "bg-cta" : "bg-foreground hover:bg-background",
+            "text-white py-4 flex justify-start"
           )}
           fullWidth
           radius="sm"
@@ -73,8 +79,8 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/help" ? "bg-cta" : "bg-foreground",
-            "text-white shadow-lg py-4 flex justify-start"
+            pathName === "/help" ? "bg-cta" : "bg-foreground hover:bg-background",
+            "text-white py-4 flex justify-start"
           )}
           fullWidth
           radius="sm"
@@ -84,7 +90,7 @@ export function Sidebar() {
       </div>
       <div className="px-8 space-y-8 mt-8">
         <Button
-          className="bg-sidebargradient text-white"
+          className="bg-sidebargradient text-white "
           size="lg"
           fullWidth
           radius="sm"

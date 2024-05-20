@@ -1,33 +1,44 @@
-import { Button, Input } from "@nextui-org/react";
-
+import { Button, Input, Tooltip } from "@nextui-org/react";
+import Image from "next/image";
+import nodeSetup from "../public/nodeSetup.png";
+import i from "../public/i.png";
 export default function Home() {
+  const name = "Chris";
   return (
     <main className="flex">
-    <div className="flex justify-around space-x-4 w-full">
-        <div className="w-4/12 p-8 text-white">
-          <div className="space-y-4">
-            <h3>Hey Chris</h3>
-            <h1>Welcome</h1>
+      <div className="flex justify-around space-x-4 w-full">
+        <div className="w-4/12 px-8 pt-10 text-white">
+          <div className="space-y-2">
+            <h3 className="text-sm">Hey {name},</h3>
+            <h1 className="text-2xl font-semibold">Welcome 👋🏻 </h1>
           </div>
           <hr className="my-4" />
           <div className="my-4">
-            <h1 className="my-4">Node Setup</h1>
+            <div className="my-2 flex justify-between items-center">
+              <div className="flex items-center space-x-4">
+                <div className="h-8 w-8 bg-cta2 flex justify-center items-center rounded">
+                  <Image src={nodeSetup} alt="nodeSetup" />
+                </div>
+                <h1 className="my-4">Node Setup</h1>
+              </div>
+              <Tooltip content="I am a tooltip">
+                <Image src={i} alt="?" width={15} />
+              </Tooltip>
+            </div>
             <div className="space-y-4">
               <Input
                 type="email"
-                label="http(s) Node Link"
+                placeholder="http(s) Node Link"
                 radius="sm"
-                size="sm"
                 className="bg-foreground text-white rounded-md"
                 variant="bordered"
               />
               <Input
                 type="email"
-                label="Websocket Node Link"
+                placeholder="Websocket Node Link"
                 className="bg-foreground text-white rounded-md"
                 variant="bordered"
                 radius="sm"
-                size="sm"
               />
               <Button
                 variant="bordered"
@@ -38,35 +49,44 @@ export default function Home() {
               >
                 Submit
               </Button>
-              <Button
-                variant="light"
-                className="block m-auto underline text-white"
-                radius="sm"
-              >
-                Change Node
-              </Button>
             </div>
+            <Button
+              variant="light"
+              className="block m-auto underline text-white text-sm"
+              radius="sm"
+            >
+              Change Node
+            </Button>
           </div>
           <hr className="my-4" />
           <div className="my-4">
-            <h1 className="my-4">Priority Fees</h1>
+            <div className="my-2 flex justify-between items-center">
+              <div className="flex items-center space-x-4">
+                <div className="h-8 w-8 bg-cta2 flex justify-center items-center rounded">
+                  <Image src={nodeSetup} alt="Priority Fees" />
+                </div>
+                <h1 className="my-4">Priority Fees</h1>
+              </div>
+              <Tooltip content="I am a tooltip">
+                <Image src={i} alt="?" width={15} />
+              </Tooltip>
+            </div>
             <div className="space-y-4">
               <Input
                 type="email"
-                label="Buy Fee"
-                radius="sm"
-                size="sm"
+                placeholder="Sell Fee"
                 className="bg-foreground text-white rounded-md"
+                radius="sm"
                 variant="bordered"
               />
               <Input
                 type="email"
-                label="Sell Fee"
+                placeholder="Sell Fee"
                 className="bg-foreground text-white rounded-md"
-                variant="bordered"
                 radius="sm"
-                size="sm"
+                variant="bordered"
               />
+
               <div className="flex justify-between space-x-4">
                 <Button
                   variant="bordered"
