@@ -36,6 +36,7 @@ const config = {
         foreground: "#262830",
         cta: "#0038FF",
         cta2: "#C600D6",
+        disabled:"#7c7d83",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

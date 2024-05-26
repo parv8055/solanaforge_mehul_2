@@ -112,7 +112,7 @@ export default function Home() {
       </div>
       <div className="w-6/12 px-8 text-white flex flex-col">
         <div>
-          <div className="w-full bg-foreground rounded px-4 py-1">
+          <div className="w-full bg-foreground rounded px-4 py-3">
             <div className="flex items-center space-x-4">
               <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
                 <Image src={wallet} alt="wallet" />
@@ -124,26 +124,29 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-between space-x-4 my-4">
-            <div className="w-full bg-foreground rounded px-4 py-1">
-              <div className="flex items-center space-x-4">
-                <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
-                  <Image src={wallet} alt="wallet" />
-                </div>
-                <div>
-                  <h1 className="text-xs">Wallet Address</h1>
-                  <h1 className="">2345acv123htd23454acxzczxcx</h1>
-                </div>{" "}
+          <div className="flex space-x-4 my-4">
+          <div className="bg-foreground w-4/12 rounded px-4 py-3">
+            <div className="flex items-center space-x-4">
+              <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
+                <Image src={wallet} alt="wallet" />
+              </div>
+              <div>
+                <h1 className="text-xs">SOL Balance</h1>
+                <h1 className="">21.8 SOL</h1>
               </div>
             </div>
-            <div className="w-full bg-foreground rounded px-4 py-1">
-              <div className="flex items-center space-x-4">
-                <div className="h-8 w-8 bg-cta flex justify-center items-center rounded">
-                  <Image src={wallet} alt="wallet" />
-                </div>
-                <h1 className="my-4">Node Setup</h1>
+          </div>
+          <div className="bg-foreground w-8/12 rounded px-4 py-3">
+            <div className="flex items-center space-x-4">
+              <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
+                <Image src={wallet} alt="wallet" />
+              </div>
+              <div>
+                <h1 className="text-xs">SFG Balance</h1>
+                <h1 className="">2,845,100.85 SFG</h1>
               </div>
             </div>
+          </div>
           </div>
         </div>
         <div className="my-4 space-y-2">
