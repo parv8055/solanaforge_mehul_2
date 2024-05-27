@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { cn } from "@/lib/utils";
 import { Sidebar } from "@/components/Sidebar";
 import SplashScreen from "@/components/SplashScreen";
 
-const inter = Inter({ subsets: ["latin"] });
+const nontserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Solana",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("font-sans antialiased", inter.className)}>
+      <body className={cn("font-sans antialiased", nontserrat.className)}>
         <NextUIProvider>
           <main className="flex bg-background text-white">
             {false ? (

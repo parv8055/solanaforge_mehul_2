@@ -55,6 +55,7 @@ export default function Home() {
             href=""
             underline="always"
             className="block text-center text-white hover:text-primary"
+            size="sm"
           >
             Change Node
           </Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Checkbox, Input, Tooltip, cn } from "@nextui-org/react";
+import { Button, Checkbox, Input, Link, Tooltip, cn } from "@nextui-org/react";
 import nodeSetup from "../../public/Node setup.png";
 import i from "../../public/i.png";
 import Image from "next/image";
@@ -16,7 +16,6 @@ export default function Page() {
   const [isForthSelected, setIsForthSelected] = useState(false);
   const [isFifthSelected, setIsFifthSelected] = useState(false);
   const [isSixthSelected, setIsSixthSelected] = useState(false);
-  const [selected, setSelected] = useState("");
 
   const name = "chris";
   if (isTradeStarted) {
@@ -232,6 +231,14 @@ export default function Page() {
               START TRADE
             </Button>
           </div>
+          <Link
+            href=""
+            underline="always"
+            className="block text-center text-white hover:text-primary"
+            size="sm"
+          >
+            Advance Options
+          </Link>
         </div>
         <div className="w-6/12 px-8 text-white flex flex-col">
           <div>
@@ -335,6 +342,7 @@ export default function Page() {
               CONFIRM
             </Button>
           </div>
+        
         </div>
       </div>
     );
