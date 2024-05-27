@@ -29,7 +29,6 @@ const config = {
         background: {
           DEFAULT: "#14161E",
           foreground: "#262830",
-          foregroundLight: "#181a21",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -41,7 +40,7 @@ const config = {
         },
         muted: {
           DEFAULT: "#7c7d83",
-          // foreground: "#181a21",
+          foreground: "#181a21",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",

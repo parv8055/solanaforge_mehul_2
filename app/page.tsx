@@ -1,4 +1,4 @@
-import { Button, Input, Tooltip } from "@nextui-org/react";
+import { Button, Input, Link, Tooltip } from "@nextui-org/react";
 import Image from "next/image";
 import nodeSetup from "../public/nodeSetup.png";
 import i from "../public/i.png";
@@ -7,7 +7,7 @@ import wallet from "../public/wallet.png";
 export default function Home() {
   const name = "Chris";
   return (
-    <div className="flex justify-around space-x-4 pt-12">
+    <div className="flex justify-evenly space-x-4 pt-12">
       <div className="w-4/12 px-8 text-white">
         <div className="space-y-2">
           <h3 className="text-sm">Hey {name},</h3>
@@ -31,7 +31,7 @@ export default function Home() {
               type="email"
               placeholder="http(s) Node Link"
               radius="sm"
-              className="bg-background-foreground text-white rounded-md"
+              className="bg-background-foreground text-white -md"
               variant="bordered"
             />
             <Input
@@ -43,21 +43,21 @@ export default function Home() {
             />
             <Button
               variant="bordered"
-              className="block m-auto text-white"
+              className="text-white hover:bg-primary-foreground"
               fullWidth
               radius="sm"
-              size="lg"
+              size="md"
             >
               Submit
             </Button>
           </div>
-          <Button
-            variant="light"
-            className="block m-auto underline text-white text-sm"
-            radius="sm"
+          <Link
+            href=""
+            underline="always"
+            className="block text-center text-white hover:text-primary"
           >
             Change Node
-          </Button>
+          </Link>
         </div>
         <hr className="my-4" />
         <div className="my-4">
@@ -91,9 +91,9 @@ export default function Home() {
             <div className="flex justify-between space-x-4">
               <Button
                 variant="bordered"
-                className="text-white"
+                className="text-white hover:bg-primary-foreground"
                 radius="sm"
-                size="lg"
+                size="md"
                 fullWidth
               >
                 AI
@@ -101,7 +101,7 @@ export default function Home() {
               <Button
                 className="text-white bg-primary-foreground"
                 radius="sm"
-                size="lg"
+                size="md"
                 fullWidth
               >
                 Submit
@@ -119,34 +119,36 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-xs">Wallet Address</h1>
-                <h1 className="">2345acv123htd23454acxzczxcx</h1>
+                <h1 className="text-sm font-semibold">
+                  2345acv123htd23454acxzczxcx
+                </h1>
               </div>
             </div>
           </div>
 
-          <div className="flex space-x-4 my-4">
-          <div className="bg-background-foreground w-4/12 rounded px-4 py-3">
-            <div className="flex items-center space-x-4">
-              <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
-                <Image src={wallet} alt="wallet" />
-              </div>
-              <div>
-                <h1 className="text-xs">SOL Balance</h1>
-                <h1 className="">21.8 SOL</h1>
-              </div>
-            </div>
-          </div>
-          <div className="bg-background-foreground w-8/12 rounded px-4 py-3">
-            <div className="flex items-center space-x-4">
-              <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
-                <Image src={wallet} alt="wallet" />
-              </div>
-              <div>
-                <h1 className="text-xs">SFG Balance</h1>
-                <h1 className="">2,845,100.85 SFG</h1>
+          <div className="flex space-x-4 my-3">
+            <div className="bg-background-foreground w-4/12 rounded px-4 py-3">
+              <div className="flex items-center space-x-4">
+                <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
+                  <Image src={wallet} alt="wallet" />
+                </div>
+                <div>
+                  <h1 className="text-xs">SOL Balance</h1>
+                  <h1 className="text-sm font-semibold">21.8 SOL</h1>
+                </div>
               </div>
             </div>
-          </div>
+            <div className="bg-background-foreground w-8/12 rounded px-4 py-3">
+              <div className="flex items-center space-x-4">
+                <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
+                  <Image src={wallet} alt="wallet" />
+                </div>
+                <div>
+                  <h1 className="text-xs">SFG Balance</h1>
+                  <h1 className="text-sm font-semibold">2,845,100.85 SFG</h1>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="my-4 space-y-2">

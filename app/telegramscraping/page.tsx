@@ -15,6 +15,7 @@ export default function Page() {
   const [isThirdSelected, setIsThirdSelected] = useState(false);
   const [isForthSelected, setIsForthSelected] = useState(false);
   const [isFifthSelected, setIsFifthSelected] = useState(false);
+  const [isSixthSelected, setIsSixthSelected] = useState(false);
   const [selected, setSelected] = useState("");
 
   const name = "chris";
@@ -23,29 +24,35 @@ export default function Page() {
   }
   if (isVerified) {
     return (
-      <div className="flex justify-around space-x-4 pt-4">
+      <div className="flex justify-evenly space-x-4 pt-4">
         <div className="w-4/12 px-8">
           <div
             className={cn(
               isFirstSelected ? "border-primary" : "border-muted",
-              "my-4 border rounded px-4 py-3 space-y-2 bg-background-foregroundLight"
+              "border rounded px-4 py-3 space-y-2 bg-muted-foreground hover:border-primary"
             )}
           >
             <div className="flex justify-between">
-              <h1>PURCHASE AMOUNT</h1>
+              <span
+                className={cn(
+                  isFirstSelected ? "text-white" : "text-muted",
+                  "text-xs"
+                )}
+              >
+                PURCHASE AMOUNT
+              </span>
               <Checkbox
                 isSelected={isFirstSelected}
                 onValueChange={setIsFirstSelected}
               ></Checkbox>
             </div>
             <Input
-              type="email"
               placeholder="ENTER AMOUNT HERE"
               labelPlacement="outside"
               className="bg-background-foreground rounded-md"
               variant="bordered"
               radius="sm"
-              ismuted={!isFirstSelected}
+              isDisabled={!isFirstSelected}
             />
             <Button
               variant="bordered"
@@ -53,7 +60,7 @@ export default function Page() {
               fullWidth
               radius="sm"
               size="md"
-              ismuted={!isFirstSelected}
+              isDisabled={!isFirstSelected}
             >
               CONFIRM
             </Button>
@@ -61,7 +68,7 @@ export default function Page() {
           <div
             className={cn(
               isSecondSelected ? "border-primary" : "border-muted",
-              "my-4 border rounded px-4 py-3 space-y-2 bg-background-foregroundLight"
+              "my-4 border rounded px-4 py-3 space-y-2 bg-muted-foreground hover:border-primary"
             )}
           >
             <div className="flex justify-end">
@@ -72,24 +79,22 @@ export default function Page() {
             </div>
             <div className="flex space-x-2">
               <Input
-                type="email"
                 placeholder="%"
                 label="TAKE PROFIT"
                 labelPlacement="outside"
                 className="bg-background-foreground rounded-md"
                 variant="bordered"
                 radius="sm"
-                ismuted={!isSecondSelected}
+                isDisabled={!isSecondSelected}
               />
               <Input
-                type="email"
                 placeholder="%"
                 label="STOP LOSS"
                 labelPlacement="outside"
                 className="bg-background-foreground rounded-md"
                 variant="bordered"
                 radius="sm"
-                ismuted={!isSecondSelected}
+                isDisabled={!isSecondSelected}
               />
             </div>
             <Button
@@ -98,7 +103,7 @@ export default function Page() {
               fullWidth
               radius="sm"
               size="md"
-              ismuted={!isSecondSelected}
+              isDisabled={!isSecondSelected}
             >
               CONFIRM
             </Button>
@@ -106,11 +111,18 @@ export default function Page() {
           <div
             className={cn(
               isThirdSelected ? "border-primary" : "border-muted",
-              "my-4 border rounded px-4 py-3 bg-background-foregroundLight"
+              "border rounded px-4 py-3 space-y-2 bg-muted-foreground hover:border-primary"
             )}
           >
             <div className="flex justify-between mb-2">
-              <h1>STOP LOSS</h1>
+              <span
+                className={cn(
+                  isThirdSelected ? "text-white" : "text-muted",
+                  "text-xs"
+                )}
+              >
+                STOP LOSS
+              </span>
               <Checkbox
                 isSelected={isThirdSelected}
                 onValueChange={setIsThirdSelected}
@@ -118,33 +130,39 @@ export default function Page() {
             </div>
             <div className="flex space-x-4 items-start">
               <Input
-                type="email"
                 placeholder="%"
                 labelPlacement="outside"
                 className="bg-background-foreground rounded-md"
                 variant="bordered"
                 radius="sm"
-                ismuted={!isThirdSelected}
+                isDisabled={!isThirdSelected}
               />
               <Button
                 variant="bordered"
                 className="block m-auto text-white hover:bg-primary-foreground"
                 fullWidth
                 radius="sm"
-                ismuted={!isThirdSelected}
+                isDisabled={!isThirdSelected}
               >
                 CONFIRM
               </Button>
             </div>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 my-2">
             <div
               className={cn(
                 isForthSelected ? "border-primary" : "border-muted",
-                "flex justify-between items-center rounded-lg py-2 px-4 bg-background-foregroundLight border"
+                "flex justify-between items-center rounded-lg py-2 px-4 bg-muted-foreground border hover:border-primary"
               )}
             >
-              <h1>Helooo</h1>
+              <span
+                className={cn(
+                  isForthSelected ? "text-white" : "text-muted",
+                  "text-xs"
+                )}
+              >
+                Keep Buying After First Token Found
+              </span>
               <Checkbox
                 isSelected={isForthSelected}
                 onValueChange={setIsForthSelected}
@@ -154,10 +172,17 @@ export default function Page() {
             <div
               className={cn(
                 isFifthSelected ? "border-primary" : "border-muted",
-                "flex justify-between items-center rounded-lg py-2 px-4 bg-background-foregroundLight border mb-2"
+                "flex justify-between items-center rounded-lg py-2 px-4 bg-muted-foreground border mb-2 hover:border-primary"
               )}
             >
-              <h1>Helooo</h1>
+              <span
+                className={cn(
+                  isFifthSelected ? "text-white" : "text-muted",
+                  "text-xs"
+                )}
+              >
+                Buy Purchased Token Again
+              </span>
               <Checkbox
                 isSelected={isFifthSelected}
                 onValueChange={setIsFifthSelected}
@@ -166,21 +191,27 @@ export default function Page() {
             </div>
           </div>
           <div className="my-4 flex space-x-4 items-start">
+            <div className="w-8/12">
             <Input
-              type="email"
-              placeholder="STOP LOSS"
-              className="bg-background-foreground rounded-md"
+              placeholder="Channel/Group Selection"
+              className="bg-background-foreground rounded"
               variant="bordered"
               radius="sm"
+              fullWidth
             />
+            </div>
+         
+            <div className="w-4/12">
+   
             <Button
               variant="bordered"
               className="block m-auto text-white hover:bg-primary-foreground"
               fullWidth
               radius="sm"
             >
-              CONFIRM
+              SUBMIT
             </Button>
+            </div>
           </div>
           <div className="my-4 flex space-x-4 items-start">
             <Button
@@ -211,12 +242,14 @@ export default function Page() {
                 </div>
                 <div>
                   <h1 className="text-xs">Wallet Address</h1>
-                  <h1 className="">2345acv123htd23454acxzczxcx</h1>
+                  <h1 className="text-sm font-semibold">
+                    2345acv123htd23454acxzczxcx
+                  </h1>
                 </div>
               </div>
             </div>
 
-            <div className="flex space-x-4 my-4">
+            <div className="flex space-x-4 my-3">
               <div className="bg-background-foreground w-4/12 rounded px-4 py-3">
                 <div className="flex items-center space-x-4">
                   <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
@@ -224,7 +257,7 @@ export default function Page() {
                   </div>
                   <div>
                     <h1 className="text-xs">SOL Balance</h1>
-                    <h1 className="">21.8 SOL</h1>
+                    <h1 className="text-sm font-semibold">21.8 SOL</h1>
                   </div>
                 </div>
               </div>
@@ -235,7 +268,7 @@ export default function Page() {
                   </div>
                   <div>
                     <h1 className="text-xs">SFG Balance</h1>
-                    <h1 className="">2,845,100.85 SFG</h1>
+                    <h1 className="text-sm font-semibold">2,845,100.85 SFG</h1>
                   </div>
                 </div>
               </div>
@@ -245,38 +278,18 @@ export default function Page() {
             <hr />
             <h1>Panel Heading Here</h1>
           </div>
-          <div className="flex-1 bg-background-foreground rounded px-12 py-8">
-            <div className="flex space-x-4">
-              <Input
-                type="email"
-                placeholder="% TOKEN"
-                className="bg-background-foreground rounded-md"
-                variant="bordered"
-                radius="sm"
-              />
-              <Input
-                type="email"
-                placeholder="% PROFIT"
-                className="bg-background-foreground rounded-md"
-                variant="bordered"
-                radius="sm"
-              />
-            </div>
-            <div className="flex space-x-4 my-4">
-              <Input
-                type="email"
-                placeholder="% TOKEN"
-                className="bg-background-foreground rounded-md"
-                variant="bordered"
-                radius="sm"
-              />
-              <Input
-                type="email"
-                placeholder="% PROFIT"
-                className="bg-background-foreground rounded-md"
-                variant="bordered"
-                radius="sm"
-              />
+          <div
+            className={cn(
+              isSixthSelected ? "border-primary" : "border-muted",
+              "flex-1 bg-muted-foreground rounded p-12 border relative hover:border-primary"
+            )}
+          >
+            <div className="flex justify-end absolute top-2 right-0">
+              <Checkbox
+                isSelected={isSixthSelected}
+                onValueChange={setIsSixthSelected}
+                className=""
+              ></Checkbox>
             </div>
             <div className="flex space-x-4">
               <Input
@@ -285,6 +298,7 @@ export default function Page() {
                 className="bg-background-foreground rounded-md"
                 variant="bordered"
                 radius="sm"
+                isDisabled={!isSixthSelected}
               />
               <Input
                 type="email"
@@ -292,61 +306,31 @@ export default function Page() {
                 className="bg-background-foreground rounded-md"
                 variant="bordered"
                 radius="sm"
+                isDisabled={!isSixthSelected}
               />
             </div>
             <div className="flex space-x-4 my-4">
               <Input
-                type="email"
                 placeholder="% TOKEN"
                 className="bg-background-foreground rounded-md"
                 variant="bordered"
                 radius="sm"
+                isDisabled={!isSixthSelected}
               />
               <Input
-                type="email"
                 placeholder="% PROFIT"
                 className="bg-background-foreground rounded-md"
                 variant="bordered"
                 radius="sm"
-              />
-            </div>
-            <div className="flex space-x-4">
-              <Input
-                type="email"
-                placeholder="% TOKEN"
-                className="bg-background-foreground rounded-md"
-                variant="bordered"
-                radius="sm"
-              />
-              <Input
-                type="email"
-                placeholder="% PROFIT"
-                className="bg-background-foreground rounded-md"
-                variant="bordered"
-                radius="sm"
-              />
-            </div>
-            <div className="flex space-x-4 my-4">
-              <Input
-                type="email"
-                placeholder="% TOKEN"
-                className="bg-background-foreground rounded-md"
-                variant="bordered"
-                radius="sm"
-              />
-              <Input
-                type="email"
-                placeholder="% PROFIT"
-                className="bg-background-foreground rounded-md"
-                variant="bordered"
-                radius="sm"
+                isDisabled={!isSixthSelected}
               />
             </div>
             <Button
               variant="bordered"
-              className="block m-auto text-white"
+              className="text-white hover:bg-primary-foreground"
               fullWidth
               radius="sm"
+              isDisabled={!isSixthSelected}
             >
               CONFIRM
             </Button>
@@ -357,7 +341,7 @@ export default function Page() {
   }
 
   return (
-    <div className="flex justify-around space-x-4 pt-12 pb-8 h-full">
+    <div className="flex justify-evenly space-x-4 pt-12 pb-8 h-full">
       <div className="w-4/12 px-8 text-white">
         <div className="space-y-2">
           <h3 className="text-sm">Hey {name},</h3>
@@ -386,10 +370,10 @@ export default function Page() {
             />
             <Button
               variant="bordered"
-              className="block m-auto text-white"
+              className="text-white hover:bg-primary-foreground"
               fullWidth
               radius="sm"
-              size="lg"
+              size="md"
             >
               GET CODE
             </Button>
@@ -406,10 +390,10 @@ export default function Page() {
           />
           <Button
             variant="bordered"
-            className="block m-auto text-white"
+            className="text-white hover:bg-primary-foreground"
             fullWidth
             radius="sm"
-            size="lg"
+            size="md"
             onClick={() => setIsVerified(true)}
           >
             VERIFY
@@ -425,12 +409,14 @@ export default function Page() {
               </div>
               <div>
                 <h1 className="text-xs">Wallet Address</h1>
-                <h1 className="">2345acv123htd23454acxzczxcx</h1>
+                <h1 className="text-sm font-semibold">
+                  2345acv123htd23454acxzczxcx
+                </h1>
               </div>
             </div>
           </div>
 
-          <div className="flex space-x-4 my-4">
+          <div className="flex space-x-4 my-3">
             <div className="bg-background-foreground w-4/12 rounded px-4 py-3">
               <div className="flex items-center space-x-4">
                 <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
@@ -438,7 +424,7 @@ export default function Page() {
                 </div>
                 <div>
                   <h1 className="text-xs">SOL Balance</h1>
-                  <h1 className="">21.8 SOL</h1>
+                  <h1 className="text-sm font-semibold">21.8 SOL</h1>
                 </div>
               </div>
             </div>
@@ -449,7 +435,7 @@ export default function Page() {
                 </div>
                 <div>
                   <h1 className="text-xs">SFG Balance</h1>
-                  <h1 className="">2,845,100.85 SFG</h1>
+                  <h1 className="text-sm font-semibold">2,845,100.85 SFG</h1>
                 </div>
               </div>
             </div>
@@ -459,7 +445,7 @@ export default function Page() {
           <hr />
           <h1>Panel Heading Here</h1>
         </div>
-        <div className="flex-1 bg-background-foreground rounded "></div>
+        <div className="flex-1 bg-muted-foreground rounded"></div>
       </div>
     </div>
   );
