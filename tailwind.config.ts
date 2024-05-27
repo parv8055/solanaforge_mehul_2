@@ -1,8 +1,8 @@
+// tailwind.config.js
 import { nextui } from "@nextui-org/react";
-import type { Config } from "tailwindcss";
 
+/** @type {import('tailwindcss').Config} */
 const config = {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -10,15 +10,7 @@ const config = {
     "./src/**/*.{ts,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       backgroundImage: {
         splashgradient:
@@ -30,16 +22,14 @@ const config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        // background: "hsl(var(--background))",
-        background: "#14161E",
-        // foreground: "hsl(var(--foreground))",
-        foreground: "#262830",
-        cta: "#0038FF",
-        cta2: "#C600D6",
-        disabled:"#7c7d83",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#0038FF",
+          foreground: "#C600D6",
+        },
+        background: {
+          DEFAULT: "#14161E",
+          foreground: "#262830",
+          foregroundLight: "#181a21",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -50,8 +40,8 @@ const config = {
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#7c7d83",
+          // foreground: "#181a21",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
@@ -66,28 +56,10 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
     },
   },
-  plugins: [require("tailwindcss-animate"), nextui()],
-} satisfies Config;
+  darkMode: "class",
+  plugins: [nextui()],
+};
 
 export default config;

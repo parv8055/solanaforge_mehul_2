@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("font-sans antialiased", inter.className)}>
         <NextUIProvider>
-          <main className="flex">
+          <main className="flex bg-background text-white">
             {false ? (
               <SplashScreen />
             ) : (

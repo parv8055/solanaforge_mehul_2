@@ -17,7 +17,7 @@ export default function Home() {
         <div className="my-4">
           <div className="my-2 flex justify-between items-center">
             <div className="flex items-center space-x-4">
-              <div className="h-8 w-8 bg-cta2 flex justify-center items-center rounded">
+              <div className="h-8 w-8 bg-primary-foreground flex justify-center items-center rounded">
                 <Image src={nodeSetup} alt="nodeSetup" />
               </div>
               <h1 className="my-4">Node Setup</h1>
@@ -31,13 +31,13 @@ export default function Home() {
               type="email"
               placeholder="http(s) Node Link"
               radius="sm"
-              className="bg-foreground text-white rounded-md"
+              className="bg-background-foreground text-white rounded-md"
               variant="bordered"
             />
             <Input
               type="email"
               placeholder="Websocket Node Link"
-              className="bg-foreground text-white rounded-md"
+              className="bg-background-foreground text-white rounded-md"
               variant="bordered"
               radius="sm"
             />
@@ -63,7 +63,7 @@ export default function Home() {
         <div className="my-4">
           <div className="my-2 flex justify-between items-center">
             <div className="flex items-center space-x-4">
-              <div className="h-8 w-8 bg-cta2 flex justify-center items-center rounded">
+              <div className="h-8 w-8 bg-primary-foreground flex justify-center items-center rounded">
                 <Image src={nodeSetup} alt="Priority Fees" />
               </div>
               <h1 className="my-4">Priority Fees</h1>
@@ -76,14 +76,14 @@ export default function Home() {
             <Input
               type="email"
               placeholder="Sell Fee"
-              className="bg-foreground text-white rounded-md"
+              className="bg-background-foreground text-white rounded-md"
               radius="sm"
               variant="bordered"
             />
             <Input
               type="email"
               placeholder="Sell Fee"
-              className="bg-foreground text-white rounded-md"
+              className="bg-background-foreground text-white rounded-md"
               radius="sm"
               variant="bordered"
             />
@@ -99,7 +99,7 @@ export default function Home() {
                 AI
               </Button>
               <Button
-                className="text-white bg-cta2"
+                className="text-white bg-primary-foreground"
                 radius="sm"
                 size="lg"
                 fullWidth
@@ -112,9 +112,9 @@ export default function Home() {
       </div>
       <div className="w-6/12 px-8 text-white flex flex-col">
         <div>
-          <div className="w-full bg-foreground rounded px-4 py-3">
+          <div className="w-full bg-background-foreground rounded px-4 py-3">
             <div className="flex items-center space-x-4">
-              <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
+              <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
                 <Image src={wallet} alt="wallet" />
               </div>
               <div>
@@ -125,9 +125,9 @@ export default function Home() {
           </div>
 
           <div className="flex space-x-4 my-4">
-          <div className="bg-foreground w-4/12 rounded px-4 py-3">
+          <div className="bg-background-foreground w-4/12 rounded px-4 py-3">
             <div className="flex items-center space-x-4">
-              <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
+              <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
                 <Image src={wallet} alt="wallet" />
               </div>
               <div>
@@ -136,9 +136,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="bg-foreground w-8/12 rounded px-4 py-3">
+          <div className="bg-background-foreground w-8/12 rounded px-4 py-3">
             <div className="flex items-center space-x-4">
-              <div className="h-10 w-10 bg-cta flex justify-center items-center rounded">
+              <div className="h-10 w-10 bg-primary flex justify-center items-center rounded">
                 <Image src={wallet} alt="wallet" />
               </div>
               <div>
@@ -153,7 +153,7 @@ export default function Home() {
           <hr />
           <h1>Panel Heading Here</h1>
         </div>
-        <div className="flex-1 bg-foreground rounded "></div>
+        <div className="flex-1 bg-background-foreground rounded "></div>
       </div>
     </div>
   );

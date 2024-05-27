@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import logoWhite from "../public/logoWhite.png";
-import { Button } from "@nextui-org/react";
-import { cn } from "@/lib/utils";
+import { Button, cn } from "@nextui-org/react";
 import { usePathname, useRouter } from "next/navigation";
 
 export function Sidebar() {
@@ -11,7 +10,7 @@ export function Sidebar() {
   const router = useRouter()
 
   return (
-    <div className="hidden md:block w-[20%] bg-foreground min-h-screen">
+    <div className="hidden md:block w-[20%] bg-background-foreground min-h-screen">
       <Image
         src={logoWhite}
         alt="Logo White"
@@ -25,7 +24,7 @@ export function Sidebar() {
       <div className="px-8 space-y-4">
         <Button
           className={cn(
-            pathName === "/" ? "bg-cta" : "bg-foreground hover:bg-cta",
+            pathName === "/" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
           onClick={()=>{
@@ -38,7 +37,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/telegramscraping" ? "bg-cta" : "bg-foreground hover:bg-cta",
+            pathName === "/telegramscraping" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
           onClick={()=>{
@@ -51,7 +50,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/tokensniper" ? "bg-cta" : "bg-foreground hover:bg-cta",
+            pathName === "/tokensniper" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
           onClick={()=>{
@@ -64,7 +63,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/aigemhunter" ? "bg-cta" : "bg-foreground hover:bg-cta",
+            pathName === "/aigemhunter" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
           onClick={()=>{
@@ -77,7 +76,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/doordie" ? "bg-cta" : "bg-foreground hover:bg-cta",
+            pathName === "/doordie" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
           onClick={()=>{
@@ -90,7 +89,7 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/help" ? "bg-cta" : "bg-foreground hover:bg-cta",
+            pathName === "/help" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
           onClick={()=>{
@@ -117,7 +116,7 @@ export function Sidebar() {
           fullWidth
           radius="sm"
         >
-          USERs
+          USER
         </Button>
       </div>
     </div>
