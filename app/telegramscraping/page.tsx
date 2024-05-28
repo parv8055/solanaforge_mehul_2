@@ -1,6 +1,19 @@
 "use client";
 
-import { Button, Checkbox, Input, Link, Tooltip, cn } from "@nextui-org/react";
+import {
+  Button,
+  Checkbox,
+  Input,
+  Link,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  Tooltip,
+  cn,
+  useDisclosure,
+} from "@nextui-org/react";
 import nodeSetup from "../../public/Node setup.png";
 import i from "../../public/i.png";
 import Image from "next/image";
@@ -16,8 +29,10 @@ export default function Page() {
   const [isForthSelected, setIsForthSelected] = useState(false);
   const [isFifthSelected, setIsFifthSelected] = useState(false);
   const [isSixthSelected, setIsSixthSelected] = useState(false);
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const name = "chris";
+
   if (isTradeStarted) {
     return <div></div>;
   }
@@ -191,25 +206,24 @@ export default function Page() {
           </div>
           <div className="my-4 flex space-x-4 items-start">
             <div className="w-8/12">
-            <Input
-              placeholder="Channel/Group Selection"
-              className="bg-background-foreground rounded"
-              variant="bordered"
-              radius="sm"
-              fullWidth
-            />
+              <Input
+                placeholder="Channel/Group Selection"
+                className="bg-background-foreground rounded"
+                variant="bordered"
+                radius="sm"
+                fullWidth
+              />
             </div>
-         
+
             <div className="w-4/12">
-   
-            <Button
-              variant="bordered"
-              className="block m-auto text-white hover:bg-primary-foreground"
-              fullWidth
-              radius="sm"
-            >
-              SUBMIT
-            </Button>
+              <Button
+                variant="bordered"
+                className="block m-auto text-white hover:bg-primary-foreground"
+                fullWidth
+                radius="sm"
+              >
+                SUBMIT
+              </Button>
             </div>
           </div>
           <div className="my-4 flex space-x-4 items-start">
@@ -232,13 +246,324 @@ export default function Page() {
             </Button>
           </div>
           <Link
-            href=""
+            onPress={onOpen}
             underline="always"
-            className="block text-center text-white hover:text-primary"
+            className="block text-center text-white hover:text-primary cursor-pointer"
             size="sm"
           >
             Advance Options
           </Link>
+          <Modal
+            size="3xl"
+            isOpen={isOpen}
+            onOpenChange={onOpenChange}
+            isDismissable={true}
+            isKeyboardDismissDisabled={false}
+            className="bg-background-foreground text-white"
+            motionProps={{
+              variants: {
+                enter: {
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.3,
+                    ease: "easeOut",
+                  },
+                },
+                exit: {
+                  y: -20,
+                  opacity: 0,
+                  transition: {
+                    duration: 0.2,
+                    ease: "easeIn",
+                  },
+                },
+              },
+            }}
+          >
+            <ModalContent>
+              {(onClose) => (
+                <>
+                  <ModalHeader className="flex flex-col gap-1">
+                    Advance Options
+                  </ModalHeader>
+                  <ModalBody>
+                    <div className="flex space-x-4">
+                      <div className="w-6/12 space-y-2">
+                        <div
+                          className={cn(
+                            isThirdSelected ? "border-primary" : "border-muted",
+                            "border rounded px-4 py-3 space-y-2 bg-muted-foreground hover:border-primary"
+                          )}
+                        >
+                          <div className="flex justify-between mb-2">
+                            <span
+                              className={cn(
+                                isThirdSelected ? "text-white" : "text-muted",
+                                "text-xs"
+                              )}
+                            >
+                              Rug Check
+                            </span>
+                            <Checkbox
+                              isSelected={isThirdSelected}
+                              onValueChange={setIsThirdSelected}
+                            ></Checkbox>
+                          </div>
+                          <div className="items-start space-y-2">
+                            <Input
+                              placeholder="Rug Check Risk Level"
+                              labelPlacement="outside"
+                              className="bg-background-foreground rounded-md"
+                              variant="bordered"
+                              radius="sm"
+                              fullWidth
+                              isDisabled={!isThirdSelected}
+                            />
+                            <div className="flex space-x-4">
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={cn(
+                            isThirdSelected ? "border-primary" : "border-muted",
+                            "border rounded px-4 py-3 space-y-2 bg-muted-foreground hover:border-primary"
+                          )}
+                        >
+                          <div className="flex justify-between mb-2">
+                            <span
+                              className={cn(
+                                isThirdSelected ? "text-white" : "text-muted",
+                                "text-xs"
+                              )}
+                            >
+                              Rug Check
+                            </span>
+                            <Checkbox
+                              isSelected={isThirdSelected}
+                              onValueChange={setIsThirdSelected}
+                            ></Checkbox>
+                          </div>
+                          <div className="items-start space-y-2">
+                            <Input
+                              placeholder="Rug Check Risk Level"
+                              labelPlacement="outside"
+                              className="bg-background-foreground rounded-md"
+                              variant="bordered"
+                              radius="sm"
+                              fullWidth
+                              isDisabled={!isThirdSelected}
+                            />
+                            <div className="flex space-x-4">
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={cn(
+                            isThirdSelected ? "border-primary" : "border-muted",
+                            "border rounded px-4 py-3 space-y-2 bg-muted-foreground hover:border-primary"
+                          )}
+                        >
+                          <div className="flex justify-between mb-2">
+                            <span
+                              className={cn(
+                                isThirdSelected ? "text-white" : "text-muted",
+                                "text-xs"
+                              )}
+                            >
+                              Rug Check
+                            </span>
+                            <Checkbox
+                              isSelected={isThirdSelected}
+                              onValueChange={setIsThirdSelected}
+                            ></Checkbox>
+                          </div>
+                          <div className="items-start space-y-2">
+                            <Input
+                              placeholder="Rug Check Risk Level"
+                              labelPlacement="outside"
+                              className="bg-background-foreground rounded-md"
+                              variant="bordered"
+                              radius="sm"
+                              fullWidth
+                              isDisabled={!isThirdSelected}
+                            />
+                            <div className="flex space-x-4">
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="w-6/12 space-y-2">
+                        <div
+                          className={cn(
+                            isThirdSelected ? "border-primary" : "border-muted",
+                            "border rounded px-4 py-3 space-y-2 bg-muted-foreground hover:border-primary"
+                          )}
+                        >
+                          <div className="flex justify-between mb-2">
+                            <span
+                              className={cn(
+                                isThirdSelected ? "text-white" : "text-muted",
+                                "text-xs"
+                              )}
+                            >
+                              Rug Check
+                            </span>
+                            <Checkbox
+                              isSelected={isThirdSelected}
+                              onValueChange={setIsThirdSelected}
+                            ></Checkbox>
+                          </div>
+                          <div className="items-start space-y-2">
+                            <Input
+                              placeholder="Rug Check Risk Level"
+                              labelPlacement="outside"
+                              className="bg-background-foreground rounded-md"
+                              variant="bordered"
+                              radius="sm"
+                              fullWidth
+                              isDisabled={!isThirdSelected}
+                            />
+                            <div className="flex space-x-4">
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={cn(
+                            isThirdSelected ? "border-primary" : "border-muted",
+                            "border rounded px-4 py-3 space-y-2 bg-muted-foreground hover:border-primary"
+                          )}
+                        >
+                          <div className="flex justify-between mb-2">
+                            <span
+                              className={cn(
+                                isThirdSelected ? "text-white" : "text-muted",
+                                "text-xs"
+                              )}
+                            >
+                              Rug Check
+                            </span>
+                            <Checkbox
+                              isSelected={isThirdSelected}
+                              onValueChange={setIsThirdSelected}
+                            ></Checkbox>
+                          </div>
+                          <div className="items-start space-y-2">
+                            <Input
+                              placeholder="Rug Check Risk Level"
+                              labelPlacement="outside"
+                              className="bg-background-foreground rounded-md"
+                              variant="bordered"
+                              radius="sm"
+                              fullWidth
+                              isDisabled={!isThirdSelected}
+                            />
+                            <div className="flex space-x-4">
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                              <Button
+                                variant="bordered"
+                                className="block m-auto text-white hover:bg-primary-foreground"
+                                fullWidth
+                                radius="sm"
+                                isDisabled={!isThirdSelected}
+                              >
+                                CONFIRM
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="primary" variant="light" onPress={onClose}>
+                      Back to main screen
+                    </Button>
+                  </ModalFooter>
+                </>
+              )}
+            </ModalContent>
+          </Modal>
         </div>
         <div className="w-6/12 px-8 text-white flex flex-col">
           <div>
@@ -342,12 +667,10 @@ export default function Page() {
               CONFIRM
             </Button>
           </div>
-        
         </div>
       </div>
     );
   }
-
   return (
     <div className="flex justify-evenly space-x-4 pt-12 pb-8 h-full">
       <div className="w-4/12 px-8 text-white">
