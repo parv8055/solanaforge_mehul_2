@@ -5,9 +5,19 @@ import logoWhite from "../public/logoWhite.png";
 import { Button, cn } from "@nextui-org/react";
 import { usePathname, useRouter } from "next/navigation";
 
+
+export default function SidebarLayout({ children }) {
+  return (
+    <div className="flex">
+      <Sidebar />
+      <div className="flex-1">{children}</div>
+    </div>
+  );
+}
+
 export function Sidebar() {
   const pathName = usePathname();
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="hidden md:block w-[20%] bg-background-foreground min-h-screen">
@@ -24,11 +34,13 @@ export function Sidebar() {
       <div className="px-8 space-y-4">
         <Button
           className={cn(
-            pathName === "/" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
+            pathName === "/"
+              ? "bg-primary"
+              : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
-          onClick={()=>{
-            router.push('/',)
+          onClick={() => {
+            router.push("/");
           }}
           fullWidth
           radius="sm"
@@ -37,11 +49,13 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/telegramscraping" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
+            pathName === "/telegramscraping"
+              ? "bg-primary"
+              : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
-          onClick={()=>{
-            router.push('/telegramscraping',)
+          onClick={() => {
+            router.push("/telegramscraping");
           }}
           fullWidth
           radius="sm"
@@ -50,11 +64,13 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/tokensniper" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
+            pathName === "/tokensniper"
+              ? "bg-primary"
+              : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
-          onClick={()=>{
-            router.push('/',)
+          onClick={() => {
+            router.push("/");
           }}
           fullWidth
           radius="sm"
@@ -63,11 +79,13 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/aigemhunter" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
+            pathName === "/aigemhunter"
+              ? "bg-primary"
+              : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
-          onClick={()=>{
-            router.push('/',)
+          onClick={() => {
+            router.push("/");
           }}
           fullWidth
           radius="sm"
@@ -76,11 +94,13 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/doordie" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
+            pathName === "/doordie"
+              ? "bg-primary"
+              : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
-          onClick={()=>{
-            router.push('/',)
+          onClick={() => {
+            router.push("/");
           }}
           fullWidth
           radius="sm"
@@ -89,11 +109,13 @@ export function Sidebar() {
         </Button>
         <Button
           className={cn(
-            pathName === "/help" ? "bg-primary" : "bg-background-foreground hover:bg-primary",
+            pathName === "/help"
+              ? "bg-primary"
+              : "bg-background-foreground hover:bg-primary",
             "text-white py-4 flex justify-start"
           )}
-          onClick={()=>{
-            router.push('/',)
+          onClick={() => {
+            router.push("/");
           }}
           fullWidth
           radius="sm"
@@ -122,3 +144,5 @@ export function Sidebar() {
     </div>
   );
 }
+
+

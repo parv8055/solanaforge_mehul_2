@@ -21,15 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("font-sans antialiased", nontserrat.className)}>
         <NextUIProvider>
-          <main className="flex bg-background text-white">
-            {false ? (
-              <SplashScreen />
-            ) : (
-              <>
-                <Sidebar />
-                <div className="flex-1">{children}</div>
-              </>
-            )}
+          <main className="bg-background text-white">
+            {false ? <SplashScreen /> : <>{children}</>}
           </main>
         </NextUIProvider>
       </body>

@@ -2,13 +2,15 @@
 
 import Image from "next/image";
 import logo from "../public/splashlogo.png";
-import { Button, Input } from "@nextui-org/react";
 import { useState } from "react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Link} from "@nextui-org/react";
 
 export default function SplashScreen() {
   const [isPressed, setIsPressed] = useState(false);
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
   return (
-    <div className="flex flex-col items-center justify-center bg-splashgradient flex-1 space-y-8">
+    <div className="flex flex-col items-center justify-center bg-splashgradient h-screen w-screen space-y-8">
       <div>
         <Image
           src={logo}
@@ -32,12 +34,64 @@ export default function SplashScreen() {
         <Button
           className="bg-white block mx-auto"
           radius="sm"
-          onClick={() => setIsPressed(true)}
+          // onClick={() => setIsPressed(true)}
+          onPress={onOpen}
         >
           START TRADING
         </Button>
       )}
       </div>
+    
+      <Modal 
+        isOpen={isOpen} 
+        onOpenChange={onOpenChange}
+        placement="top-center"
+        className="bg-background-foreground text-white"
+        >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">Log in</ModalHeader>
+              <ModalBody>
+                <Input
+                  autoFocus
+          
+                  label="Email"
+                  placeholder="Enter your email"
+                  variant="bordered"
+                />
+                <Input
+                
+                  label="Password"
+                  placeholder="Enter your password"
+                  type="password"
+                  variant="bordered"
+                />
+                <div className="flex py-2 px-1 justify-between">
+                  <Checkbox
+                    classNames={{
+                      label: "text-small",
+                    }}
+                  >
+                    Remember me
+                  </Checkbox>
+                  <Link color="primary" href="#" size="sm">
+                    Forgot password?
+                  </Link>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="flat" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Sign in
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     
 
       <span className="text-gray-500 text-xs text-center absolute bottom-12">
